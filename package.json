@@ -1,27 +1,50 @@
 {
-  "name": "sammunat-talent-hub",
-  "version": "0.1.0",
-  "private": true,
+  "name": "acorn",
+  "description": "ECMAScript parser",
+  "homepage": "https://github.com/acornjs/acorn",
+  "main": "dist/acorn.js",
+  "types": "dist/acorn.d.ts",
+  "module": "dist/acorn.mjs",
+  "exports": {
+    ".": [
+      {
+        "import": "./dist/acorn.mjs",
+        "require": "./dist/acorn.js",
+        "default": "./dist/acorn.js"
+      },
+      "./dist/acorn.js"
+    ],
+    "./package.json": "./package.json"
+  },
+  "version": "8.15.0",
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "maintainers": [
+    {
+      "name": "Marijn Haverbeke",
+      "email": "marijnh@gmail.com",
+      "web": "https://marijnhaverbeke.nl"
+    },
+    {
+      "name": "Ingvar Stepanyan",
+      "email": "me@rreverser.com",
+      "web": "https://rreverser.com/"
+    },
+    {
+      "name": "Adrian Heine",
+      "web": "http://adrianheine.de"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acornjs/acorn.git"
+  },
+  "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "prepare": "cd ..; npm run build:main"
   },
-  "dependencies": {
-    "lucide-react": "^0.562.0",
-    "next": "16.1.1",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.1",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+  "bin": {
+    "acorn": "bin/acorn"
   }
 }
